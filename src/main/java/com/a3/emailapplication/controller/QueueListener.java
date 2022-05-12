@@ -31,6 +31,8 @@ public class QueueListener {
     public void listen(UserDto userDto){
         System.err.println(userDto);
         Map<String, String> model = new HashMap<>();
+        model.put("$%{firstName}%", userDto.getFirstName());
+        model.put("$%{lastName}%", userDto.getLastName());
         model.put("$%{movieName}%", "Avengers");
         model.put("$%{director}%", "Joe Russo");
         model.put("$%{seatNb}%", "2");
